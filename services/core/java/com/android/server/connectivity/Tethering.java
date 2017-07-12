@@ -1108,9 +1108,9 @@ public class Tethering extends BaseNetworkObserver implements IControlsTethering
             return;
         }
 
-        // Hack for fix WIFI Tether on JF devices
-        final String jf = SystemProperties.get("ro.product.name");
-        if (jf.equals("jflte")) {
+        // Hack for fix WIFI Tether on pme devices
+        final String pme = SystemProperties.get("ro.product.name");
+        if (pme.equals("pme")) {
             if(mTetherStates.get(chosenIface) == null) {
                 Log.e(TAG, "Adding non-existent Iface: " + chosenIface);
                 trackNewTetherableInterface(chosenIface, interfaceType);
